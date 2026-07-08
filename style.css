@@ -452,13 +452,3 @@ body {
     margin-top: 4px;
     opacity: 0.7;
 }
-
-@media (max-width: 400px) {
-    .selects-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .swap-btn-wrapper {
-        display: none;
-    }
-}

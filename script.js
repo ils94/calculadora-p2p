@@ -135,9 +135,9 @@
     }
 
     function updatePriceDisplay() {
-        btcPriceEl.textContent = priceCache.btc.price ? `R$ ${formatMoney(priceCache.btc.price)}` : 'R$ --';
-        usdtPriceEl.textContent = priceCache.usdt.price ? `R$ ${formatMoney(priceCache.usdt.price)}` : 'R$ --';
-        usdcPriceEl.textContent = priceCache.usdc.price ? `R$ ${formatMoney(priceCache.usdc.price)}` : 'R$ --';
+        btcPriceEl.textContent = priceCache.btc.price ? `${formatMoney(priceCache.btc.price)}` : '--';
+        usdtPriceEl.textContent = priceCache.usdt.price ? `${formatMoney(priceCache.usdt.price)}` : '--';
+        usdcPriceEl.textContent = priceCache.usdc.price ? `${formatMoney(priceCache.usdc.price)}` : '--';
     }
 
     function updateStatusIndicators(isError = false) {

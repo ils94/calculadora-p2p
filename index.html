@@ -28,22 +28,22 @@
                     <div class="select-group">
                         <label for="fromCurrency" class="select-label">De</label>
                         <select id="fromCurrency" class="currency-select">
-                            <option value="BTC">BTC</option>
+                            <option value="BRL">BRL</option>
                             <option value="Sats">Sats</option>
+                            <option value="BTC">BTC</option>
                             <option value="USDT">USDT</option>
                             <option value="USDC">USDC</option>
-                            <option value="BRL">BRL</option>
                         </select>
                     </div>
 
                     <div class="select-group">
                         <label for="toCurrency" class="select-label">Para</label>
                         <select id="toCurrency" class="currency-select">
-                            <option value="BRL">BRL</option>
                             <option value="BTC">BTC</option>
                             <option value="Sats">Sats</option>
                             <option value="USDT">USDT</option>
                             <option value="USDC">USDC</option>
+                            <option value="BRL">BRL</option>
                         </select>
                     </div>
                 </div>
@@ -94,27 +94,24 @@
 
         <div class="rates-grid">
             <div class="rate-card" id="rateBtc">
-                <div class="rate-icon">₿</div>
                 <div class="rate-info">
-                    <span class="rate-label">1 BTC</span>
-                    <span class="rate-value" id="btcPrice">R$ --</span>
+                    <span class="rate-label">1 BTC para R$</span>
+                    <span class="rate-value" id="btcPrice">--</span>
                 </div>
                 <div class="rate-status" id="btcStatus"></div>
             </div>
 
             <div class="rate-card" id="rateUsdt">
-                <div class="rate-icon">💲</div>
                 <div class="rate-info">
-                    <span class="rate-label">1 USDT</span>
-                    <span class="rate-value" id="usdtPrice">R$ --</span>
+                    <span class="rate-label">1 USDT para R$</span>
+                    <span class="rate-value" id="usdtPrice">--</span>
                 </div>
                 <div class="rate-status" id="usdtStatus"></div>
             </div>
 
             <div class="rate-card" id="rateUsdc">
-                <div class="rate-icon">💲</div>
                 <div class="rate-info">
-                    <span class="rate-label">1 USDC</span>
+                    <span class="rate-label">1 USDC para R$</span>
                     <span class="rate-value" id="usdcPrice">R$ --</span>
                 </div>
                 <div class="rate-status" id="usdcStatus"></div>
