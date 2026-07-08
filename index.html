@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Criptomoedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="bitcoin-icon">₿</span> Calculadora P2P
+            </h1>
+            <p class="subtitle">Bitcoin, Sats, USDT, USDC</p>
+        </header>
+
+        <div class="card converter-card">
+            <div class="converter-header">
+                <h2>Conversor</h2>
+                <button class="btn-swap" id="swapBtn" title="Inverter moedas" aria-label="Inverter moedas">
+                    <span class="swap-icon">⇄</span>
+                </button>
+            </div>
+
+            <div class="converter-body">
+                <div class="selects-row">
+                    <div class="select-group">
+                        <label for="fromCurrency" class="select-label">De</label>
+                        <select id="fromCurrency" class="currency-select">
+                            <option value="BTC">BTC</option>
+                            <option value="Sats">Sats</option>
+                            <option value="USDT">USDT</option>
+                            <option value="USDC">USDC</option>
+                            <option value="BRL">BRL</option>
+                        </select>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="toCurrency" class="select-label">Para</label>
+                        <select id="toCurrency" class="currency-select">
+                            <option value="BRL">BRL</option>
+                            <option value="BTC">BTC</option>
+                            <option value="Sats">Sats</option>
+                            <option value="USDT">USDT</option>
+                            <option value="USDC">USDC</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="amountInput" class="input-label">Valor</label>
+                    <input
+                        type="number"
+                        id="amountInput"
+                        class="amount-input"
+                        inputmode="decimal"
+                        value="0"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        placeholder="0"
+
+                    />
+                </div>
+
+                <div class="fee-group">
+                    <label for="feeInput" class="input-label">Taxa (%)</label>
+                    <div class="fee-input-wrapper">
+                        <input
+                            type="number"
+                            id="feeInput"
+                            class="fee-input"
+                            value="0"
+                            min="0"
+                            max="100"
+                            step="0.01"
+                            placeholder="0"
+                        />
+                        <span class="fee-percent">%</span>
+                    </div>
+                    <small class="fee-hint">Descontado do valor final entregue ao cliente</small>
+                </div>
+
+                <div class="result-area" id="resultArea">
+                    <span class="result-label">Resultado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                    <span class="result-loading" id="resultLoading" style="display:none;">
+                        <span class="spinner"></span> Atualizando cotação...
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rates-grid">
+            <div class="rate-card" id="rateBtc">
+                <div class="rate-icon">₿</div>
+                <div class="rate-info">
+                    <span class="rate-label">1 BTC</span>
+                    <span class="rate-value" id="btcPrice">R$ --</span>
+                </div>
+                <div class="rate-status" id="btcStatus"></div>
+            </div>
+
+            <div class="rate-card" id="rateUsdt">
+                <div class="rate-icon">💲</div>
+                <div class="rate-info">
+                    <span class="rate-label">1 USDT</span>
+                    <span class="rate-value" id="usdtPrice">R$ --</span>
+                </div>
+                <div class="rate-status" id="usdtStatus"></div>
+            </div>
+
+            <div class="rate-card" id="rateUsdc">
+                <div class="rate-icon">💲</div>
+                <div class="rate-info">
+                    <span class="rate-label">1 USDC</span>
+                    <span class="rate-value" id="usdcPrice">R$ --</span>
+                </div>
+                <div class="rate-status" id="usdcStatus"></div>
+            </div>
+        </div>
+
+        <div class="update-info">
+            <span class="update-dot" id="updateDot"></span>
+            <span class="update-text" id="updateText">Buscando cotações...</span>
+            <button class="btn-refresh" id="refreshBtn" title="Atualizar cotações agora">Atualizar</button>
+        </div>
+
+        <footer class="footer">
+            <p>Dados em tempo real via <a href="https://www.binance.com/en/markets/overview" target="_blank" rel="noopener noreferrer">Binance</a></p>
+            <p class="footer-note">Cache de 10 segundos para evitar rate limit</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
